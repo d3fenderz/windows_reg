@@ -1,6 +1,8 @@
-#  Reg queries
+#  Windows Reg
 
 Cheat sheet reg queries Windows
+
+TO BE CONTINUED indefinitely...
 
 ## Read information
 
