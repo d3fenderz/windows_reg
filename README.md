@@ -100,14 +100,34 @@ reg query HKLM\SOFTWARE\Microsoft /s /f XXX /k
 
 ## Tweak settings
 
-### Disable Windows Defender
+### Take cover
+
+**Always backup** the Registry **before** tweaking entries!
+
+### Windows Defender
+
+#### Disable Windows Defender
 
 ```
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
 ```
 
-### Enable Windows Defender
+#### Enable Windows Defender
 
 ```
 reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware
+```
+
+### UAC
+
+#### Disable UAC
+
+```
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
+```
+
+#### Enable UAC
+
+```
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 1 /f
 ```
