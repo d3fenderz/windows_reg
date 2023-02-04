@@ -28,6 +28,12 @@ reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
 reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\RegEdit /v LastKey
 ```
 
+### Get typed URL
+
+```
+reg query HKCU\Software\Microsoft\InternetExplorer\TypedURLS
+```
+
 ### Get system policies
 
 ```
@@ -94,11 +100,14 @@ reg query HKLM\SOFTWARE\Microsoft /s /f XXX /k
 
 ## Tweak settings
 
-### Disable/Enable Windows Defender
+### Disable Windows Defender
 
 ```
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
-reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware
 ```
 
-### 
+### Enable Windows Defender
+
+```
+reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware
+```
