@@ -4,16 +4,60 @@ Cheat sheet reg queries Windows
 
 ## Read information
 
+### Get user env var
+
+```
+reg query HKCU\Environment /v {Variable Name}
+```
+
+### Get AppData path
+
+```
+reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders /v AppData
+```
+
+### Get user document's folder
+
+```
+reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+```
+
+### Get last registred key
+
+```
+reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\RegEdit /v LastKey
+```
+
 ### Get system policies
 
 ```
-reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+```
+
+### Get security policy
+
+```
+reg query HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v forceguest
+```
+
+### Get automatic updates status
+
+```
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update /v AUOptions
 ```
 
 ### Get Admin token
 
 ```
-reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken
+```
+
+### Get Windows Defender settings 
+
+=> Group Policy switch:
+
+```
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows Defender /v DisableAntiSpyware
 ```
 
 ### Get service config
@@ -25,19 +69,19 @@ reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services /s
 ### Get Firewall config
 
 ```
-reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy
+reg query HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy
 ```
 
 ### Get UAC (User Account Control) config
 
 ```
-reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v ConsentPromptBehaviorAdmin
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v ConsentPromptBehaviorAdmin
 ```
 
 ### Get autorun config
 
 ```
-reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDriveTypeAutoRun
+reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDriveTypeAutoRun
 ```
 
 ### Wrapper to search terms
@@ -47,3 +91,14 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
 ```
 reg query HKLM\SOFTWARE\Microsoft /s /f XXX /k
 ```
+
+## Tweak settings
+
+### Disable/Enable Windows Defender
+
+```
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware
+```
+
+### 
