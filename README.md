@@ -102,7 +102,7 @@ reg query HKLM\SOFTWARE\Microsoft /s /f XXX /k
 
 ### ⚠️ Take cover
 
-⚠️⚠️ **Always backup** the Registry **before** tweaking entries!
+🚨 **Always backup** the Registry **before** tweaking entries! 🚨
 
 ### Windows Defender
 
