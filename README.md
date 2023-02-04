@@ -1,2 +1,3 @@
-# req_queries
+#  Reg queries
+
 Cheat sheet reg queries Windows
