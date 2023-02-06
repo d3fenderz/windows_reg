@@ -38,6 +38,21 @@ reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\RegEdit /v Last
 reg query HKCU\Software\Microsoft\InternetExplorer\TypedURLS
 ```
 
+### Inspect autologon
+
+```powershell
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"
+```
+
+### Inspect startup
+
+```powershell
+reg query HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
+reg query HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+```
+
 ### Get system policies
 
 ```
@@ -135,3 +150,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v Enab
 ```
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 1 /f
 ```
+
+## Useful links
+
+* [Windows Commands: reg](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg)
