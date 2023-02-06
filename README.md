@@ -51,7 +51,7 @@ reg query HKCU /f password /t REG_SZ /s
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"
 ```
 
-### Inspect startup
+### Inspect startup (any sign of persistence)
 
 ```
 reg query HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
