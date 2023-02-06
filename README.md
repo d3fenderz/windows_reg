@@ -109,6 +109,12 @@ reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v Cons
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDriveTypeAutoRun
 ```
 
+### Inspect SNMP config
+
+```
+reg query HKLM\SYSTEM\CurrentControlSet\Services\SNMP /s
+```
+
 ### Wrapper to search terms
 
 => Get all keys that match "XXX":
