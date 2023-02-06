@@ -40,13 +40,13 @@ reg query HKCU\Software\Microsoft\InternetExplorer\TypedURLS
 
 ### Inspect autologon
 
-```powershell
+```
 reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"
 ```
 
 ### Inspect startup
 
-```powershell
+```
 reg query HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce
 reg query HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
 reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Run
