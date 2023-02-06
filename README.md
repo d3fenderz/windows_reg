@@ -38,6 +38,13 @@ reg query HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\RegEdit /v Last
 reg query HKCU\Software\Microsoft\InternetExplorer\TypedURLS
 ```
 
+### Regex to find "password" in the Registry
+
+```
+reg query HKLM /f password /t REG_SZ /s 
+reg query HKCU /f password /t REG_SZ /s
+```
+
 ### Inspect autologon
 
 ```
