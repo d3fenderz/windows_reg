@@ -4,7 +4,7 @@ Cheat sheet reg queries Windows
 
 TO BE CONTINUED indefinitely...
 
-![GitHub last commit](https://img.shields.io/github/last-commit/jmau111-org/windows_reg?label=last%20update%3A)
+![GitHub last commit](https://img.shields.io/github/last-commit/d3fenderz/windows_reg?label=last%20update%3A)
 
 ## Read information
 
